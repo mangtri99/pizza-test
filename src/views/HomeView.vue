@@ -8,6 +8,7 @@ import ToppingList from '@/components/ToppingList.vue'
 import Cart from '@/components/Cart.vue'
 import ModalBase from '@/components/ModalBase.vue'
 import { breakpointsTailwind, useBreakpoints } from '@vueuse/core'
+import CheckoutSuccess from '@/components/CheckoutSuccess.vue'
 
 const breakpoints = useBreakpoints(breakpointsTailwind)
 
@@ -17,7 +18,7 @@ const menuStore = useMenuStore()
 const { filterPizza, search, selectedPizzaId } = storeToRefs(menuStore)
 
 const cartStore = useCartStore()
-const { carts, isOpenCart } = storeToRefs(cartStore)
+const { carts, isOpenCart, isOrderSuccess } = storeToRefs(cartStore)
 
 const isOpenTopping = ref(false)
 
@@ -119,5 +120,6 @@ function openCart() {
       </template>
       <Cart />
     </ModalBase>
+    <CheckoutSuccess :is-open="isOrderSuccess" @close="isOrderSuccess = false" />
   </div>
 </template>

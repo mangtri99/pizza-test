@@ -19,6 +19,7 @@ const emit = defineEmits<{
     :key="cart.id"
   >
     <div class="absolute top-0 right-0">
+      <!-- Button remove cart item -->
       <button
         type="button"
         class="hover:bg-gray-100/50 text-xs transition-all p-1"
