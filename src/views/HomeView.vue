@@ -80,7 +80,10 @@ function openCart() {
           v-model="search"
         />
       </div>
-      <div class="grid sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 grid-cols-2 gap-4">
+      <div
+        class="grid sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 grid-cols-2 gap-4"
+        v-if="filterPizza.length > 0"
+      >
         <PizzaCard
           :pizza="filterPizza"
           @add="
@@ -89,6 +92,9 @@ function openCart() {
             }
           "
         />
+      </div>
+      <div v-else class="text-center">
+        <p>Pizza not found</p>
       </div>
     </div>
     <div class="fixed hidden md:flex md:flex-col top-32 right-4 bottom-10 bg-gray-200 w-64 p-4">

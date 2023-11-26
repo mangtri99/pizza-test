@@ -23,6 +23,10 @@ See [Vite Configuration Reference](https://vitejs.dev/config/).
 
 ## Project Setup
 
+Requirement
+- NodeJS version 18
+- NPM
+
 ```sh
 npm install
 ```
@@ -66,3 +70,4 @@ npm run test:e2e
 ```sh
 npm run lint
 ```
+Or you can access online via this link https://pizza-test-flax.vercel.app/
